@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced Book Reviews Web App</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <h2 class="logo"><i class="fa-solid fa-book"></i> Menu</h2>
+    <a href="#" id="menuHome"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="#" id="menuSearch"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
+    <a href="#" id="menuAdd"><i class="fa-solid fa-plus"></i> Add Book</a>
+    <a href="#" id="menuAll"><i class="fa-solid fa-layer-group"></i> Show All</a>
+    <a href="#" id="menuReviews"><i class="fa-solid fa-star"></i> Reviews</a>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="main">
+    
+    <!-- Home -->
+    <section id="homeSection">
+      <h1 class="welcome">📚 Advanced Book Reviews Web Application</h1>
+      <p class="subtitle">Browse, add, search, and review your favorite books — all in one place.</p>
+    </section>
+
+    <!-- Search -->
+    <section id="searchSection" class="hidden">
+      <h2>Search Books</h2>
+      <div class="form-box">
+        <input type="text" id="searchBox" placeholder="Enter book title or author...">
+        <button onclick="searchBooks()">Search</button>
+      </div>
+      <div id="searchResults" class="grid"></div>
+    </section>
+
+    <!-- Add Book -->
+    <section id="addBookSection" class="hidden">
+      <h2>Add a New Book</h2>
+      <div class="form-box">
+        <input type="text" id="bookTitle" placeholder="Book Title">
+        <input type="text" id="author" placeholder="Author">
+        <input type="number" id="publicationYear" placeholder="Publication Year">
+        <input type="text" id="imageUrl" placeholder="Book Cover Image URL">
+        <button onclick="addBook()">Add Book</button>
+      </div>
+      <div id="bookList" class="grid"></div>
+    </section>
+
+    <!-- All Books -->
+    <section id="allBooksSection" class="hidden">
+      <h2>All Books</h2>
+      <div id="allbooks" class="grid"></div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviewsSection" class="hidden">
+      <h2>Book Reviews</h2>
+
+      <div class="form-box">
+        <input type="text" id="reviewBookId" placeholder="Book ID">
+        <input type="text" id="reviewerName" placeholder="Your Name">
+        <input type="number" id="reviewRating" placeholder="Rating (1–5)">
+        <textarea id="reviewText" placeholder="Write your review..."></textarea>
+        <button onclick="addReview()">Add Review</button>
+      </div>
+
+      <div class="review-actions">
+        <button onclick="loadReviews()">Show All Reviews</button>
+      </div>
+
+      <div id="reviewsList" class="grid"></div>
+    </section>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
